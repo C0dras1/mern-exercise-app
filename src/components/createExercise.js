@@ -24,7 +24,7 @@ function CreateExercise() {
   const handleDateChange= date => setDate(date)
 
   const handleSubmit = e => {
-    e.prevent.default();
+    e.preventDefault()
 
     const exercise = {
       username: username,
@@ -47,15 +47,7 @@ function CreateExercise() {
           required
           value={username}
           onChange={handleUsernameChange}>
-          {
-            users.map(user => {
-              return (
-                <option
-                  key={user}
-                  value={user}>{user}
-                </option>
-            )})
-          }
+          {users.map(user => <option key={user} value={user}>{user}</option> )}
         </select>
 
         <label>Description: </label>
